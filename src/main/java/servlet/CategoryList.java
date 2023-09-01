@@ -83,7 +83,6 @@ public class CategoryList extends HttpServlet {
 //		});
 		
 		Gson gson = new Gson();
-		
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json"); // http통신에서 JSON객체로 보내는것을 표시하기 위해 사용
 		//    전송하기위한 메소드   >   응답
@@ -106,6 +105,7 @@ public class CategoryList extends HttpServlet {
 			if(feedArray[i].getCategoryName().equals(categoryName)) {
 				feeds.add(feedArray[i]);
 			}
+			
 		}
 		
 		return feeds;
