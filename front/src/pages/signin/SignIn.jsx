@@ -20,13 +20,16 @@ function SignIn(props) {
         try {
             const response = await axios.post("http://localhost:8080/servlet_study_jhj/auth/signin", signinInput); 
             
-            if(!response.data) {
+            console.log(response);
+
+            if(!response.data.token) {
                 alert("로그인 정보가 잘못 되었습니다.");
                 return;
             }
+            
+            localStorage.setItem("token", response.data?.token);
             alert("환영합니다.");
             
-
 
         } catch (error) {
             console.log(error);
